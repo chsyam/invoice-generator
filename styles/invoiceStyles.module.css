@@ -1,0 +1,108 @@
+.invoiceMetadata {
+    display: flex;
+    justify-content: center;
+}
+
+.invoiceMetadata table {
+    flex-grow: 1;
+    border: 1px solid black;
+    min-width: 30%;
+}
+
+
+.shippingDetails {
+    display: flex;
+    justify-content: center;
+}
+
+.shippingDetails table {
+    flex-grow: 1;
+    border: 1px solid black;
+}
+
+.shippingDetails table thead tr th {
+    background-color: #BFDBFE;
+    text-align: left;
+}
+
+.shippingDetails table tbody tr td:nth-child(3) {
+    max-width: 350px;
+}
+
+.itemsList table {
+    width: 100%;
+}
+
+.itemsList table td:nth-child(1) {
+    text-align: center;
+}
+
+.itemsList table thead tr th,
+.itemsList table tbody tr:nth-last-child(2) td {
+    background-color: #BFDBFE;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 600;
+}
+
+.itemsList table tbody tr:nth-last-child(1) td {
+    text-align: left;
+}
+
+.itemsList table tbody tr td:nth-child(2),
+.itemsList table thead tr th:nth-child(2) {
+    text-align: left;
+}
+
+.itemsList table tbody tr {
+    height: 40px;
+}
+
+.itemsList table tbody tr td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.amountDetails {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.amountDetails table {
+    flex-grow: 1;
+    border: 1px solid black;
+}
+
+
+.amountDetails table:nth-child(2) tbody tr td {
+    border: 1px solid black;
+    text-align: left;
+    /* padding: 5px; */
+}
+
+.authorising {
+    display: flex;
+    justify-content: center;
+}
+
+.authorising table {
+    flex-grow: 1;
+    border: 1px solid black;
+}
+
+.companyDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.companyDetails table {
+    flex-grow: 1;
+    border: 1px solid black;
+}
+
+.companyDetails table:nth-child(2) {
+    text-align: center;
+    color: red;
+}
