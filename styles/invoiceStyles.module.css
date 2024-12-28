@@ -1,32 +1,24 @@
 .invoiceMetadata {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.invoiceMetadata table {
-    flex-grow: 1;
-    border: 1px solid black;
-    min-width: 30%;
+.key {
+    color: #3b3b3b;
+    font-size: 18px;
+}
+
+.value {
+    font-weight: 600;
+    padding: 0 5px;
+    font-size: 18px;
 }
 
 
 .shippingDetails {
     display: flex;
-    justify-content: center;
-}
-
-.shippingDetails table {
-    flex-grow: 1;
-    border: 1px solid black;
-}
-
-.shippingDetails table thead tr th {
-    background-color: #BFDBFE;
-    text-align: left;
-}
-
-.shippingDetails table tbody tr td:nth-child(3) {
-    max-width: 350px;
+    justify-content: space-around;
+    border-collapse: collapse;
 }
 
 .itemsList table {
@@ -65,20 +57,8 @@
 
 .amountDetails {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-}
-
-.amountDetails table {
-    flex-grow: 1;
-    border: 1px solid black;
-}
-
-
-.amountDetails table:nth-child(2) tbody tr td {
-    border: 1px solid black;
-    text-align: left;
-    /* padding: 5px; */
 }
 
 .authorising {
