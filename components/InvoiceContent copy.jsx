@@ -10,7 +10,7 @@ export default function InvoiceContent({ ref }) {
     }
 
     return (
-        <div ref={ref} style={{ zoom: 0.8 }} className="mx-[10px] my-[10px] p-[10px]">
+        <div ref={ref} style={{ zoom: 0.7 }} className="mx-[10px] my-[10px] p-[10px]">
             <div className="border border-black relative flex justify-between items-center gap-4 flex-nowrap bg-blue-200">
                 <div className="text-2xl font-bold h-[40px] flex-1 leading-10 text-center">
                     TAX INVOICE
@@ -30,21 +30,59 @@ export default function InvoiceContent({ ref }) {
                 </div>
             </div>
             <div className={styles.invoiceMetadata}>
-                <div className="flex-1 border-l border-black flex p-3">
-                    <div className={styles.key}>Invoice Date</div>
-                    <div className={styles.value}>: 30-10-2024</div>
+                <div className="border-l border-black flex-1 px-4 py-2">
+                    <div className="flex my-2">
+                        <div className={styles.key}>Invoice Date</div>
+                        <div className={styles.value}>: 30-10-2024</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>Date of Supply</div>
+                        <div className={styles.value}>: 30-10-2024</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>Place of Supply</div>
+                        <div className={styles.value}>: Gachibowli</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>State</div>
+                        <div className={styles.value}>: Telangana-36</div>
+                    </div>
                 </div>
-                <div className="flex-1 border-l border-black flex p-3">
-                    <div className={styles.key}>Date of Supply</div>
-                    <div className={styles.value}>: 30-10-2024</div>
+                <div className="border-x border-black flex-1 px-4 py-2">
+                    <div className="flex my-2">
+                        <div className={styles.key}>Reverse No.</div>
+                        <div className={styles.value}>: 385</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>Transportation Mode</div>
+                        <div className={styles.value}>: Road</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>Transporter Name</div>
+                        <div className={styles.value}>: PORTER</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>Vehicle No. </div>
+                        <div className={styles.value}>: TS13UD0661</div>
+                    </div>
                 </div>
-                <div className="flex-1 border-l border-black flex p-3">
-                    <div className={styles.key}>Place of Supply</div>
-                    <div className={styles.value}>: Gachibowli</div>
-                </div>
-                <div className="flex-1 border-x border-black flex p-3">
-                    <div className={styles.key}>State</div>
-                    <div className={styles.value}>: Telangana-36</div>
+                <div className="border-r border-black flex-1 px-4 py-2">
+                    <div className="flex my-2">
+                        <div className={styles.key}>Reverse Charge</div>
+                        <div className={styles.value}>: No</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>Challan No. </div>
+                        <div className={styles.value}>:</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>LR Number</div>
+                        <div className={styles.value}>:</div>
+                    </div>
+                    <div className="flex my-2">
+                        <div className={styles.key}>LR Date</div>
+                        <div className={styles.value}>: 30-10-2024</div>
+                    </div>
                 </div>
             </div>
             <div className={styles.shippingDetails}>

@@ -1,0 +1,49 @@
+{
+  "invoice_date": "",
+  "data_of_supply": "",
+  "place_of_supply": "",
+  "state": "",
+  "comapany_name": "",
+  "comapany_address": {
+    "plot_number": "",
+    "street": "",
+    "landmark": "",
+    "area": "",
+    "city": "",
+    "state": "",
+    "pincode": ""
+  },
+  "company_phone_number": "",
+  "company_email": "",
+  "company_GSTIN": "",
+  "company_PAN": "",
+  "customer_name": "",
+  "customer_address": {
+    "plot_number": "",
+    "street": "",
+    "landmark": "",
+    "area": "",
+    "city": "",
+    "state": "",
+    "pincode": ""
+  },
+  "customer_phone_number": "",
+  "customer_email": "",
+  "customer_GSTIN": "",
+  "customer_PAN": "",
+  "shipping_from": {
+    "plot_number": "",
+    "street": "",
+    "landmark": "",
+    "area": "",
+    "city": "",
+    "state": "",
+    "pincode": ""
+  },
+  "items_details": [],
+  "account_number": "",
+  "ifsc_code": "",
+  "bank_name": "",
+  "branch_name": "",
+  "upi_payment_mobile_number": ""
+}

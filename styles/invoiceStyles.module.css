@@ -1,17 +1,19 @@
 .invoiceMetadata {
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .key {
     color: #3b3b3b;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .value {
     font-weight: 600;
     padding: 0 5px;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 

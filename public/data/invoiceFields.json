@@ -1,0 +1,486 @@
+{
+  "Invoice Metadata": {
+    "invoice_date": {
+      "label": "Invoice Date",
+      "component_type": "input",
+      "data_type": "date",
+      "required": true,
+      "placeholder": "Invoice Date",
+      "value": "",
+      "edit": true
+    },
+    "data_of_supply": {
+      "label": "Date of Supply",
+      "component_type": "input",
+      "data_type": "date",
+      "required": true,
+      "placeholder": "Date of Supply",
+      "value": "",
+      "edit": true
+    },
+    "place_of_supply": {
+      "label": "Place of Supply",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Place of Supply",
+      "value": "",
+      "edit": true
+    },
+    "state": {
+      "label": "State",
+      "component_type": "select",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "State",
+      "value": "",
+      "edit": true
+    }
+  },
+  "Company Details": {
+    "comapany_name": {
+      "label": "Company Name",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter supplier (Company) Name",
+      "value": "",
+      "edit": true
+    },
+    "comapany_address": {
+      "plot_number": {
+        "label": "Plot Number",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Plot Number",
+        "value": "",
+        "edit": true
+      },
+      "street": {
+        "label": "Street",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Street",
+        "value": "",
+        "edit": true
+      },
+      "landmark": {
+        "label": "Landmark",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Landmark",
+        "value": "",
+        "edit": true
+      },
+      "area": {
+        "label": "Area",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Area",
+        "value": "",
+        "edit": true
+      },
+      "city": {
+        "label": "City",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter City",
+        "value": "",
+        "edit": true
+      },
+      "state": {
+        "label": "State",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter State",
+        "value": "",
+        "edit": true
+      },
+      "pincode": {
+        "label": "Pincode",
+        "component_type": "input",
+        "data_type": "number",
+        "required": true,
+        "placeholder": "Enter Pincode",
+        "value": "",
+        "edit": true
+      }
+    },
+    "company_phone_number": {
+      "label": "Phone Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Phone Number",
+      "value": "",
+      "edit": true
+    },
+    "company_email": {
+      "label": "Email",
+      "component_type": "input",
+      "data_type": "email",
+      "required": true,
+      "placeholder": "Enter Email",
+      "value": "",
+      "edit": true
+    },
+    "company_GSTIN": {
+      "label": "GSTIN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter GSTIN",
+      "value": "",
+      "edit": true
+    },
+    "company_PAN": {
+      "label": "PAN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter PAN",
+      "value": "",
+      "edit": true
+    }
+  },
+  "Customer Details": {
+    "customer_name": {
+      "label": "Customer Name",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Customer Name",
+      "value": "",
+      "edit": true
+    },
+    "customer_address": {
+      "plot_number": {
+        "label": "Plot Number",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Plot Number",
+        "value": "",
+        "edit": true
+      },
+      "street": {
+        "label": "Street",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Street",
+        "value": "",
+        "edit": true
+      },
+      "landmark": {
+        "label": "Landmark",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Landmark",
+        "value": "",
+        "edit": true
+      },
+      "area": {
+        "label": "Area",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Area",
+        "value": "",
+        "edit": true
+      },
+      "city": {
+        "label": "City",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter City",
+        "value": "",
+        "edit": true
+      },
+      "state": {
+        "label": "State",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter State",
+        "value": "",
+        "edit": true
+      },
+      "pincode": {
+        "label": "Pincode",
+        "component_type": "input",
+        "data_type": "number",
+        "required": true,
+        "placeholder": "Enter Pincode",
+        "value": "",
+        "edit": true
+      }
+    },
+    "customer_phone_number": {
+      "label": "Phone Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Phone Number",
+      "value": "",
+      "edit": true
+    },
+    "customer_email": {
+      "label": "Email",
+      "component_type": "input",
+      "data_type": "email",
+      "required": true,
+      "placeholder": "Enter Email",
+      "value": "",
+      "edit": true
+    },
+    "customer_GSTIN": {
+      "label": "GSTIN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter GSTIN",
+      "value": "",
+      "edit": true
+    },
+    "customer_PAN": {
+      "label": "PAN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter PAN",
+      "value": "",
+      "edit": true
+    }
+  },
+  "Shipping From": {
+    "plot_number": {
+      "label": "Plot Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Plot Number",
+      "value": "",
+      "edit": true
+    },
+    "street": {
+      "label": "Street",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Street",
+      "value": "",
+      "edit": true
+    },
+    "landmark": {
+      "label": "Landmark",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Landmark",
+      "value": "",
+      "edit": true
+    },
+    "area": {
+      "label": "Area",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Area",
+      "value": "",
+      "edit": true
+    },
+    "city": {
+      "label": "City",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter City",
+      "value": "",
+      "edit": true
+    },
+    "state": {
+      "label": "State",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter State",
+      "value": "",
+      "edit": true
+    },
+    "pincode": {
+      "label": "Pincode",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Pincode",
+      "value": "",
+      "edit": true
+    }
+  },
+  "Item Details": {
+    "item_id": {
+      "label": "Item ID",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Item ID",
+      "value": "",
+      "edit": false
+    },
+    "item_name": {
+      "label": "Item Name",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Item Name",
+      "value": "",
+      "edit": true
+    },
+    "hsn/sac": {
+      "label": "HSN/SAC",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter HSN/SAC",
+      "value": "",
+      "edit": true
+    },
+    "quantity": {
+      "label": "Quantity",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Quantity",
+      "value": "",
+      "edit": true
+    },
+    "units": {
+      "label": "Units",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Units",
+      "value": "",
+      "edit": true
+    },
+    "price": {
+      "label": "Price",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Price",
+      "value": "",
+      "edit": true
+    },
+    "taxable_value": {
+      "label": "Taxable Value",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Taxable Value",
+      "value": "",
+      "edit": false
+    },
+    "cgst_interest_rate": {
+      "label": "CGST Interest Rate",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter CGST Interest Rate",
+      "value": "",
+      "edit": true
+    },
+    "cgst_amount": {
+      "label": "CGST Amount",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter CGST Amount",
+      "value": "",
+      "edit": false
+    },
+    "sgst_interest_rate": {
+      "label": "SGST Interest Rate",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter SGST Interest Rate",
+      "value": "",
+      "edit": true
+    },
+    "sgst_amount": {
+      "label": "SGST Amount",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter SGST Amount",
+      "value": "",
+      "edit": false
+    },
+    "item_total_amount": {
+      "label": "Item Total Amount",
+      "component_type": "input",
+      "data_type": "number",
+      "required": true,
+      "placeholder": "Enter Item Total Amount",
+      "value": "",
+      "edit": false
+    }
+  },
+  "Bank Details": {
+    "account_number": {
+      "label": "Account Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Account Number",
+      "value": "025063200000070",
+      "edit": true
+    },
+    "ifsc_code": {
+      "label": "IFSC Code",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter IFSC Code",
+      "value": "YESB0000250",
+      "edit": true
+    },
+    "bank_name": {
+      "label": "Bank Name",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Bank Name",
+      "value": "YES BANK",
+      "edit": true
+    },
+    "branch": {
+      "label": "Branch",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Branch",
+      "value": "BANJARA HILLS, HYDERABAD",
+      "edit": true
+    },
+    "upi_payment_mobile_number": {
+      "label": "UPI Payment Mobile Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter UPI Payment Mobile Number",
+      "value": "8534099966",
+      "edit": true
+    }
+  }
+}

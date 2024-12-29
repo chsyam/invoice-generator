@@ -8,7 +8,7 @@ export default function BankComponent() {
         'Branch': 'BANJARA HILLS, HYDERABAD',
         'For UPI Payment': '8534099966'
     }
-    console.log(Object.keys(bankDetails))
+
     return (
         <div className="border px-4 py-2 border-t-0 border-black">
             {
