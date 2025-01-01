@@ -38,13 +38,9 @@ export default function InvoiceContent({ ref }) {
                     <div className={styles.key}>Date of Supply</div>
                     <div className={styles.value}>: 30-10-2024</div>
                 </div>
-                <div className="flex-1 border-l border-black flex p-3">
-                    <div className={styles.key}>Place of Supply</div>
-                    <div className={styles.value}>: Gachibowli</div>
-                </div>
                 <div className="flex-1 border-x border-black flex p-3">
-                    <div className={styles.key}>State</div>
-                    <div className={styles.value}>: Telangana-36</div>
+                    <div className={styles.key}>Place of Supply</div>
+                    <div className={styles.value}>: Gachibowli, Telangana-36</div>
                 </div>
             </div>
             <div className={styles.shippingDetails}>

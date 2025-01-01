@@ -262,68 +262,70 @@
     }
   },
   "Shipping From": {
-    "plot_number": {
-      "label": "Plot Number",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter Plot Number",
-      "value": "",
-      "edit": true
-    },
-    "street": {
-      "label": "Street",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter Street",
-      "value": "",
-      "edit": true
-    },
-    "landmark": {
-      "label": "Landmark",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter Landmark",
-      "value": "",
-      "edit": true
-    },
-    "area": {
-      "label": "Area",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter Area",
-      "value": "",
-      "edit": true
-    },
-    "city": {
-      "label": "City",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter City",
-      "value": "",
-      "edit": true
-    },
-    "state": {
-      "label": "State",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter State",
-      "value": "",
-      "edit": true
-    },
-    "pincode": {
-      "label": "Pincode",
-      "component_type": "input",
-      "data_type": "number",
-      "required": true,
-      "placeholder": "Enter Pincode",
-      "value": "",
-      "edit": true
+    "shipping_address": {
+      "plot_number": {
+        "label": "Plot Number",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Plot Number",
+        "value": "",
+        "edit": true
+      },
+      "street": {
+        "label": "Street",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Street",
+        "value": "",
+        "edit": true
+      },
+      "landmark": {
+        "label": "Landmark",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Landmark",
+        "value": "",
+        "edit": true
+      },
+      "area": {
+        "label": "Area",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter Area",
+        "value": "",
+        "edit": true
+      },
+      "city": {
+        "label": "City",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter City",
+        "value": "",
+        "edit": true
+      },
+      "state": {
+        "label": "State",
+        "component_type": "input",
+        "data_type": "text",
+        "required": true,
+        "placeholder": "Enter State",
+        "value": "",
+        "edit": true
+      },
+      "pincode": {
+        "label": "Pincode",
+        "component_type": "input",
+        "data_type": "number",
+        "required": true,
+        "placeholder": "Enter Pincode",
+        "value": "",
+        "edit": true
+      }
     }
   },
   "Item Details": {
