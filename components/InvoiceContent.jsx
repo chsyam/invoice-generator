@@ -1,12 +1,21 @@
+import { format } from "date-fns";
 import styles from "./../styles/invoiceStyles.module.css";
 import AddressComponent from "./AddressComponent";
 import BankComponent from "./BankComponent";
 
-export default function InvoiceContent({ ref }) {
+export default function InvoiceContent({ ref, formData, setFormData }) {
     const typeOfRecipient = {
         "Original for Recepient": true,
         "Duplicate for Transporter": false,
         "Triplicate for Supplier": false
+    }
+
+    const getFormattedDate = (date) => {
+        if (!date) {
+            return format(new Date(), "dd-MM-yyyy");
+        }
+        const dateParts = date.split("-")
+        return dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
     }
 
     return (
@@ -31,35 +40,40 @@ export default function InvoiceContent({ ref }) {
             </div>
             <div className={styles.invoiceMetadata}>
                 <div className="flex-1 border-l border-black flex p-3">
-                    <div className={styles.key}>Invoice Date</div>
-                    <div className={styles.value}>: 30-10-2024</div>
+                    <div className={styles.key}>Invoice Date :</div>
+                    <div className={styles.value}>
+                        {getFormattedDate(formData?.invoice_date)}
+                    </div>
                 </div>
                 <div className="flex-1 border-l border-black flex p-3">
-                    <div className={styles.key}>Date of Supply</div>
-                    <div className={styles.value}>: 30-10-2024</div>
+                    <div className={styles.key}>Date of Supply :</div>
+                    <div className={styles.value}>
+                        {getFormattedDate(formData?.data_of_supply)}
+                    </div>
                 </div>
                 <div className="flex-1 border-x border-black flex p-3">
-                    <div className={styles.key}>Place of Supply</div>
-                    <div className={styles.value}>: Gachibowli, Telangana-36</div>
+                    <div className={styles.key}>Place of Supply :</div>
+                    <div className={styles.value}>
+                        {formData?.place_of_supply}
+                    </div>
                 </div>
             </div>
             <div className={styles.shippingDetails}>
                 <div className="border border-r-0  border-b-0 border-black px-4 py-2">
                     <span className="text-2xl font-semibold">
-                        Phata Phat Delivery
+                        {formData?.comapany_name}
                     </span>
-                    <AddressComponent />
+                    <AddressComponent address_type="company" comapany_address={formData?.comapany_address} />
                 </div>
                 <div className="border border-r-0 border-b-0 border-black px-4 py-2">
                     <div className="font-[600] my-1 text-[18px]">Customer Details:</div>
                     <div>Ch Syam Kumar</div>
                     <div className="font-[600] my-1 text-[18px]">Billing Address:</div>
-                    <AddressComponent />
+                    <AddressComponent address_type="customer" customer_address={formData?.customer_address} />
                 </div>
                 <div className="border border-black border-b-0  px-4 py-2">
                     <div className="font-[600] my-2 text-[18px]">Shipping Address:</div>
-                    <div>{'M/S PPD'}</div>
-                    <AddressComponent />
+                    <AddressComponent address_type="shipping" shipping_from={formData?.shipping_from} />
                 </div>
             </div>
             <div className={styles.itemsList}>
@@ -141,13 +155,18 @@ export default function InvoiceContent({ ref }) {
                             <td>₹2,56,500</td>
                         </tr>
                         <tr>
-                            <td colSpan={12}>Total invoice amount (in words): INR <span className="font-semibold px-1">{'Ten Thousand Five Hundred Fifty Thousand Only'}.</span> </td>
+                            <td colSpan={12}>
+                                Total invoice amount (in words): INR
+                                <span className="font-semibold px-1">
+                                    {'Ten Thousand Five Hundred Fifty Thousand Only'}.
+                                </span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div className={styles.amountDetails}>
-                <BankComponent />
+                <BankComponent formData={formData} />
                 <div>
                     <div className="flex p-2 border border-black bg-[#BFDBFE]">
                         <div className={styles.key}>Total Amount Before Tax</div>
@@ -166,17 +185,7 @@ export default function InvoiceContent({ ref }) {
                         <div className="font-semibold">: ₹2,56,500</div>
                     </div>
                 </div>
-                {/* 
-                    <tr>
-        				<td colSpan={2}>
-        					<div className="text-center flex flex-col items-center">
-        						<img src={Signature.src} alt="signature" width={100} height={100} />
-        						Authorised Signatory
-        					</div>
-        				</td>
-        			</tr> 
-                */}
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }

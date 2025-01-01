@@ -47,6 +47,42 @@
       "value": "",
       "edit": true
     },
+    "company_phone_number": {
+      "label": "Phone Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Phone Number",
+      "value": "",
+      "edit": true
+    },
+    "company_email": {
+      "label": "Email",
+      "component_type": "input",
+      "data_type": "email",
+      "required": true,
+      "placeholder": "Enter Email",
+      "value": "",
+      "edit": true
+    },
+    "company_GSTIN": {
+      "label": "GSTIN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter GSTIN",
+      "value": "",
+      "edit": true
+    },
+    "company_PAN": {
+      "label": "PAN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter PAN",
+      "value": "",
+      "edit": true
+    },
     "comapany_address": {
       "plot_number": {
         "label": "Plot Number",
@@ -111,42 +147,6 @@
         "value": "",
         "edit": true
       }
-    },
-    "company_phone_number": {
-      "label": "Phone Number",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter Phone Number",
-      "value": "",
-      "edit": true
-    },
-    "company_email": {
-      "label": "Email",
-      "component_type": "input",
-      "data_type": "email",
-      "required": true,
-      "placeholder": "Enter Email",
-      "value": "",
-      "edit": true
-    },
-    "company_GSTIN": {
-      "label": "GSTIN",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter GSTIN",
-      "value": "",
-      "edit": true
-    },
-    "company_PAN": {
-      "label": "PAN",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter PAN",
-      "value": "",
-      "edit": true
     }
   },
   "Customer Details": {
@@ -156,6 +156,42 @@
       "data_type": "text",
       "required": true,
       "placeholder": "Enter Customer Name",
+      "value": "",
+      "edit": true
+    },
+    "customer_phone_number": {
+      "label": "Phone Number",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter Phone Number",
+      "value": "",
+      "edit": true
+    },
+    "customer_email": {
+      "label": "Email",
+      "component_type": "input",
+      "data_type": "email",
+      "required": true,
+      "placeholder": "Enter Email",
+      "value": "",
+      "edit": true
+    },
+    "customer_GSTIN": {
+      "label": "GSTIN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter GSTIN",
+      "value": "",
+      "edit": true
+    },
+    "customer_PAN": {
+      "label": "PAN",
+      "component_type": "input",
+      "data_type": "text",
+      "required": true,
+      "placeholder": "Enter PAN",
       "value": "",
       "edit": true
     },
@@ -223,42 +259,6 @@
         "value": "",
         "edit": true
       }
-    },
-    "customer_phone_number": {
-      "label": "Phone Number",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter Phone Number",
-      "value": "",
-      "edit": true
-    },
-    "customer_email": {
-      "label": "Email",
-      "component_type": "input",
-      "data_type": "email",
-      "required": true,
-      "placeholder": "Enter Email",
-      "value": "",
-      "edit": true
-    },
-    "customer_GSTIN": {
-      "label": "GSTIN",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter GSTIN",
-      "value": "",
-      "edit": true
-    },
-    "customer_PAN": {
-      "label": "PAN",
-      "component_type": "input",
-      "data_type": "text",
-      "required": true,
-      "placeholder": "Enter PAN",
-      "value": "",
-      "edit": true
     }
   },
   "Shipping From": {
@@ -466,7 +466,7 @@
       "value": "YES BANK",
       "edit": true
     },
-    "branch": {
+    "branch_name": {
       "label": "Branch",
       "component_type": "input",
       "data_type": "text",

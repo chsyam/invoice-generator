@@ -1,12 +1,12 @@
 import styles from "./../styles/invoiceStyles.module.css"
 
-export default function BankComponent() {
+export default function BankComponent({ formData }) {
     const bankDetails = {
-        'Account Number': '025063200000070',
-        'IFSC Code': 'YESB0000250',
-        'Bank Name': 'Yes Bank',
-        'Branch': 'BANJARA HILLS, HYDERABAD',
-        'For UPI Payment': '8534099966'
+        'Account Number': formData?.account_number,
+        'IFSC Code': formData?.ifsc_code,
+        'Bank Name': formData?.bank_name,
+        'Branch': formData?.branch_name,
+        'For UPI Payment': formData?.upi_payment_mobile_number
     }
 
     return (
