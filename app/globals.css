@@ -20,8 +20,3 @@ body {
   font-family: "Montserrat", serif;
   color: #000;
 }
-
-body table td,
-body table th {
-  padding: 10px;
-}

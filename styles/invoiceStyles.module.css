@@ -16,27 +16,12 @@
     font-size: 14px;
 }
 
-
-.shippingDetails {
-    display: flex;
-    justify-content: space-around;
-    border-collapse: collapse;
-}
-
 .itemsList table {
     width: 100%;
 }
 
 .itemsList table td:nth-child(1) {
     text-align: center;
-}
-
-.itemsList table thead tr th,
-.itemsList table tbody tr:nth-last-child(2) td {
-    background-color: #BFDBFE;
-    border: 1px solid black;
-    text-align: center;
-    font-weight: 600;
 }
 
 .itemsList table tbody tr:nth-last-child(1) td {
@@ -48,43 +33,7 @@
     text-align: left;
 }
 
-.itemsList table tbody tr {
-    height: 40px;
-}
-
 .itemsList table tbody tr td {
     border: 1px solid black;
     text-align: center;
-}
-
-.amountDetails {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.authorising {
-    display: flex;
-    justify-content: center;
-}
-
-.authorising table {
-    flex-grow: 1;
-    border: 1px solid black;
-}
-
-.companyDetails {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.companyDetails table {
-    flex-grow: 1;
-    border: 1px solid black;
-}
-
-.companyDetails table:nth-child(2) {
-    text-align: center;
-    color: red;
 }

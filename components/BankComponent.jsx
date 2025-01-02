@@ -10,7 +10,7 @@ export default function BankComponent({ formData }) {
     }
 
     return (
-        <div className="border px-4 py-2 border-t-0 border-black">
+        <div className="">
             {
                 Object.keys(bankDetails).map((key, index) => {
                     return (
