@@ -175,41 +175,47 @@ export default function InvoiceForm({ formData, setFormData }) {
                 <AccordionDetails>
                     <div className="overflow-auto my-4">
                         {
-                            (formData?.itemsList || []).map((item, index) => {
-                                return (
-                                    <div key={index} className="flex items-end flex-nowrap gap-4 mb-8">
-                                        <div className="cursor-pointer bg-red-100 hover:bg-red-200 rounded-full p-2" onClick={() => handleDeleteItem(item?.item_id || index + 1)}>
-                                            <Trash2 color="red" />
-                                        </div>
-                                        <div className="text-xl font-medium pb-2">
-                                            {item?.item_id || index + 1}.
-                                        </div>
-                                        {
-                                            Object.keys(item).map((field, ind) => {
-                                                return (
-                                                    field !== "item_id" && (
-                                                        <div key={field} className="grow">
-                                                            <div>
-                                                                <label htmlFor={field || ""} className="font-medium text-[14px]">
-                                                                    {formFields["Item Details"][field].label}
-                                                                </label>
-                                                                <br />
-                                                                <input id={field || ""}
-                                                                    className="w-[100%] border border-black rounded-sm px-[10px] py-[6px] text-[14px] min-w-[200px]"
-                                                                    type={formFields["Item Details"][field]?.data_type}
-                                                                    placeholder={formFields["Item Details"][field]?.placeholder}
-                                                                    value={item[field] || ""}
-                                                                    onChange={(e) => handleItemEdit(item?.item_id || index + 1, field, e.target.value)}
-                                                                />
+                            (formData?.itemsList && formData?.itemsList?.length === 0) ? (
+                                <div className="font-medium text-center">
+                                    No items added.
+                                </div>
+                            ) : (
+                                (formData?.itemsList || []).map((item, index) => {
+                                    return (
+                                        <div key={index} className="flex items-end flex-nowrap gap-4 mb-8">
+                                            <div className="cursor-pointer bg-red-100 hover:bg-red-200 rounded-full p-2" onClick={() => handleDeleteItem(item?.item_id || index + 1)}>
+                                                <Trash2 color="red" />
+                                            </div>
+                                            <div className="text-xl font-medium pb-2">
+                                                {item?.item_id || index + 1}.
+                                            </div>
+                                            {
+                                                Object.keys(item).map((field, ind) => {
+                                                    return (
+                                                        field !== "item_id" && (
+                                                            <div key={field} className="grow">
+                                                                <div>
+                                                                    <label htmlFor={field || ""} className="font-medium text-[14px]">
+                                                                        {formFields["Item Details"][field].label}
+                                                                    </label>
+                                                                    <br />
+                                                                    <input id={field || ""}
+                                                                        className="w-[100%] border border-black rounded-sm px-[10px] py-[6px] text-[14px] min-w-[200px]"
+                                                                        type={formFields["Item Details"][field]?.data_type}
+                                                                        placeholder={formFields["Item Details"][field]?.placeholder}
+                                                                        value={item[field] || ""}
+                                                                        onChange={(e) => handleItemEdit(item?.item_id || index + 1, field, e.target.value)}
+                                                                    />
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        )
                                                     )
-                                                )
-                                            })
-                                        }
-                                    </div>
-                                )
-                            })
+                                                })
+                                            }
+                                        </div>
+                                    )
+                                })
+                            )
                         }
                     </div>
                     <Button variant="contained" startIcon={<CirclePlus />} sx={{ textTransform: 'none' }} onClick={() => addItem()}>

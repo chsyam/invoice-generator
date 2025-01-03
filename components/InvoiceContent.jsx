@@ -72,70 +72,101 @@ export default function InvoiceContent({ ref, formData }) {
         return total;
     }
 
-    function convertToWords(amount) {
-        const units = [
-            "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"
-        ];
-        const teens = [
-            "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-            "Seventeen", "Eighteen", "Nineteen"
-        ];
-        const tens = [
-            "", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
-        ];
-        const scales = [
-            "", "Thousand", "Lakh", "Crore"
-        ];
+    const ones = [
+        "",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    ];
+    const teens = [
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+    ];
+    const tens = [
+        "",
+        "ten",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety",
+    ];
 
-        function numberToWords(num) {
-            if (num === 0) return "Zero";
+    function numberToWords(num) {
+        if (num === "0") return "zero";
 
-            let words = "";
-            let scaleIndex = 0;
+        let numStr = num.toString();
+        let word = "";
+        let n = numStr.length;
 
-            while (num > 0) {
-                let part = num % 1000;
-                if (part !== 0) {
-                    words = `${convertHundreds(part)} ${scales[scaleIndex]} ${words}`.trim();
-                }
-                num = Math.floor(num / 1000);
-                scaleIndex++;
-            }
+        if (n > 9) return "overflow";
 
-            return words.trim();
+        numStr = numStr.padStart(9, "0");
+
+        let crore = numStr.slice(0, 2);
+        let lakh = numStr.slice(2, 4);
+        let thousand = numStr.slice(4, 6);
+        let hundred = numStr[6];
+        let ten = numStr.slice(7);
+
+        if (parseInt(crore) > 0) {
+            word += `${convertTwoDigits(crore)} crore `;
+        }
+        if (parseInt(lakh) > 0) {
+            word += `${convertTwoDigits(lakh)} lakh `;
+        }
+        if (parseInt(thousand) > 0) {
+            word += `${convertTwoDigits(thousand)} thousand `;
+        }
+        if (parseInt(hundred) > 0) {
+            word += `${ones[hundred]} hundred `;
+        }
+        if (parseInt(ten) > 0) {
+            word += convertTwoDigits(ten);
+        }
+        return word.trim();
+    }
+
+    function convertTwoDigits(num) {
+        num = parseInt(num, 10);
+        if (num < 10) return ones[num];
+        if (num > 10 && num < 20) return teens[num - 11];
+        let unit = num % 10;
+        let ten = Math.floor(num / 10);
+        return `${tens[ten]} ${ones[unit]}`.trim();
+    }
+
+    function convertRupeesPaise(amount) {
+        let [rupees, paise] = amount.toString().split(".");
+
+        let rupeesInWords = numberToWords(parseInt(rupees));
+        let paiseInWords = paise ? convertTwoDigits(paise.padEnd(2, "0")) : "";
+
+        let result = "";
+        if (rupeesInWords) {
+            result += `${rupeesInWords} rupees`;
+        }
+        if (paiseInWords) {
+            result += ` and ${paiseInWords} paise`;
         }
 
-        function convertHundreds(num) {
-            let words = "";
-            if (num > 99) {
-                words += `${units[Math.floor(num / 100)]} Hundred `;
-                num %= 100;
-            }
-            if (num > 10 && num < 20) {
-                words += `${teens[num - 11]} `;
-            } else {
-                words += `${tens[Math.floor(num / 10)]} `;
-                num %= 10;
-            }
-            words += units[num];
-            return words.trim();
-        }
-
-        function getRupeesAndPaise(amount) {
-            const [rupees, paise] = toNumber(amount).toFixed(2).split(".");
-            return {
-                rupees: parseInt(rupees, 10),
-                paise: parseInt(paise, 10),
-            };
-        }
-
-        const { rupees, paise } = getRupeesAndPaise(amount);
-
-        let result = `${numberToWords(rupees)} Rupees`;
-        if (paise > 0) {
-            result += ` and ${numberToWords(paise)} Paise`;
-        }
-        return result + " Only";
+        return result.trim() + " Only";
     }
 
     return (
@@ -146,6 +177,38 @@ export default function InvoiceContent({ ref, formData }) {
                         <TableContainer>
                             <Table>
                                 <TableBody>
+                                    <TableRow>
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
+                                            <div className="flex">
+                                                <div className="font-medium text-[16px]">
+                                                    Invoice Date :
+                                                </div>
+                                                <div className="font-semibold text-[18px]">
+                                                    {getFormattedDate(formData?.invoice_date)}
+                                                </div>
+                                            </div>
+                                        </TableCell>
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
+                                            <div className="flex">
+                                                <div className="font-medium text-[16px]">
+                                                    Date of Supply :
+                                                </div>
+                                                <div className="font-semibold text-[18px]">
+                                                    {getFormattedDate(formData?.data_of_supply)}
+                                                </div>
+                                            </div>
+                                        </TableCell>
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={5}>
+                                            <div className="flex">
+                                                <div className="font-medium text-[16px]">
+                                                    Place of Supply :
+                                                </div>
+                                                <div className="font-semibold text-[18px]">
+                                                    {formData?.place_of_supply}
+                                                </div>
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
                                     <TableRow sx={highlightedRows}>
                                         <TableCell colSpan={11}>
                                             <div className="flex justify-between items-center gap-4 flex-nowrap">
@@ -166,32 +229,6 @@ export default function InvoiceContent({ ref, formData }) {
                                                             )
                                                         })
                                                     }
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={4}>
-                                            <div className="flex">
-                                                <div className={styles.key}>Invoice Date :</div>
-                                                <div className={styles.value}>
-                                                    {getFormattedDate(formData?.invoice_date)}
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={4}>
-                                            <div className="flex">
-                                                <div className={styles.key}>Date of Supply :</div>
-                                                <div className={styles.value}>
-                                                    {getFormattedDate(formData?.data_of_supply)}
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
-                                            <div className="flex">
-                                                <div className={styles.key}>Place of Supply :</div>
-                                                <div className={styles.value}>
-                                                    {formData?.place_of_supply}
                                                 </div>
                                             </div>
                                         </TableCell>
@@ -302,9 +339,9 @@ export default function InvoiceContent({ ref, formData }) {
                                     <TableRow>
                                         <TableCell colSpan={11}>
                                             <div className="text-left text-[16px] font-medium">
-                                                Total invoice amount (in words):
-                                                <span className="font-medium pl-2 ">
-                                                    {convertToWords(get_all_items_total_after_taxes())}.
+                                                Total amount (in words):
+                                                <span className="font-semibold text-[18px] pl-1">
+                                                    {convertRupeesPaise(get_all_items_total_after_taxes())}
                                                 </span>
                                             </div>
                                         </TableCell>

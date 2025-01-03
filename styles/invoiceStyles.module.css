@@ -37,3 +37,7 @@
     border: 1px solid black;
     text-align: center;
 }
+
+.itemsList table tbody tr:nth-child(1) td {
+    border: none;
+}
