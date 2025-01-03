@@ -1,5 +1,3 @@
-import styles from "./../styles/invoiceStyles.module.css"
-
 export default function BankComponent({ formData }) {
     const bankDetails = {
         'Account Number': formData?.account_number,
@@ -10,13 +8,13 @@ export default function BankComponent({ formData }) {
     }
 
     return (
-        <div className="">
+        <div>
             {
                 Object.keys(bankDetails).map((key, index) => {
                     return (
-                        <div key={index} className="flex gap-4 my-2">
-                            <div className={styles.key}>{key}</div>
-                            <div className="font-semibold">: {bankDetails[key]}</div>
+                        <div key={index} className="flex gap-2 my-2">
+                            <div className="text-[16px] font-medium">{key} :</div>
+                            <div className="text-[16px] font-semibold">{bankDetails[key]}</div>
                         </div>
                     )
                 })

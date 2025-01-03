@@ -166,7 +166,7 @@ export default function InvoiceContent({ ref, formData }) {
             result += ` and ${paiseInWords} paise`;
         }
 
-        return result.trim() + " Only";
+        return result.trim() !== "" ? result.trim() + " Only" : "";
     }
 
     return (
@@ -212,8 +212,7 @@ export default function InvoiceContent({ ref, formData }) {
                                     <TableRow sx={highlightedRows}>
                                         <TableCell colSpan={11}>
                                             <div className="flex justify-between items-center gap-4 flex-nowrap">
-                                                <div className="flex-1">
-                                                </div>
+                                                <div className="flex-1" />
                                                 <div className="flex-1 text-2xl font-bold flex-1 text-center">
                                                     TAX INVOICE
                                                 </div>
