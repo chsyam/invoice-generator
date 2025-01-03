@@ -73,7 +73,7 @@ export default function InvoiceForm({ formData, setFormData }) {
                     id="panel2-header"
                 >
                     <div className="text-[16px] font-semibold tracking-wide">
-                        Company Address Details
+                        Company Details
                     </div>
                 </AccordionSummary>
                 <AccordionDetails>
@@ -107,30 +107,6 @@ export default function InvoiceForm({ formData, setFormData }) {
                                 return (
                                     <div key={ind} className="grow">
                                         <CompoenentRender setFormData={setFormData} formData={formData} componentName={field} componentData={formFields["Customer Details"][field]} />
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </AccordionDetails>
-            </Accordion>
-            <Accordion sx={accordionStyles}>
-                <AccordionSummary
-                    expandIcon={<ChevronDown />}
-                    aria-controls="panel3-content"
-                    id="panel3-header"
-                >
-                    <div className="text-[16px] font-semibold tracking-wide">
-                        Shipping From
-                    </div>
-                </AccordionSummary>
-                <AccordionDetails>
-                    <div className="flex flex-wrap justify-center items-center gap-[10px]">
-                        {
-                            Object.keys(formFields["Shipping From"]).map((field, ind) => {
-                                return (
-                                    <div key={ind} className="grow">
-                                        <CompoenentRender setFormData={setFormData} formData={formData} componentName={field} componentData={formFields["Shipping From"][field]} />
                                     </div>
                                 )
                             })

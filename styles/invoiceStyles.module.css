@@ -20,19 +20,6 @@
     width: 100%;
 }
 
-.itemsList table td:nth-child(1) {
-    text-align: center;
-}
-
-.itemsList table tbody tr:nth-last-child(1) td {
-    text-align: left;
-}
-
-.itemsList table tbody tr td:nth-child(2),
-.itemsList table thead tr th:nth-child(2) {
-    text-align: left;
-}
-
 .itemsList table tbody tr td {
     border: 1px solid black;
     text-align: center;

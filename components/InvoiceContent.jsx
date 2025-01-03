@@ -178,7 +178,7 @@ export default function InvoiceContent({ ref, formData }) {
                             <Table>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={11}>
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={10}>
                                             <div className="flex justify-left">
                                                 <div className="border-r border-black pr-6">
                                                     <span className="font-medium text-[14px]">
@@ -208,7 +208,7 @@ export default function InvoiceContent({ ref, formData }) {
                                         </TableCell>
                                     </TableRow>
                                     <TableRow sx={highlightedRows}>
-                                        <TableCell colSpan={11}>
+                                        <TableCell colSpan={10}>
                                             <div className="flex justify-between items-center gap-4 flex-nowrap">
                                                 <div className="flex-1" />
                                                 <div className="flex-1 text-2xl font-bold flex-1 text-center">
@@ -231,7 +231,7 @@ export default function InvoiceContent({ ref, formData }) {
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={4}>
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={5}>
                                             <div className="text-left font-medium mb-1 text-[18px]">
                                                 Source of supply:
                                             </div>
@@ -240,7 +240,7 @@ export default function InvoiceContent({ ref, formData }) {
                                             </div>
                                             <AddressComponent address_type="company" formData={formData} />
                                         </TableCell>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={4}>
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={5}>
                                             <div className="text-left font-medium mb-1 text-[18px]">
                                                 Customer Details:
                                             </div>
@@ -248,16 +248,11 @@ export default function InvoiceContent({ ref, formData }) {
                                             <div className="text-left font-medium mb-1 text-[18px]">Billing Address:</div>
                                             <AddressComponent address_type="customer" formData={formData} />
                                         </TableCell>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
-                                            <div className="text-left font-medium mb-1 text-[18px]">
-                                                Shipping Address:
-                                            </div>
-                                            <AddressComponent address_type="shipping" formData={formData} />
-                                        </TableCell>
                                     </TableRow>
                                     <TableRow sx={highlightedRows}>
-                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>#</TableCell>
-                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Name of Product</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>
+                                            <div className="text-left">Name of Product</div>
+                                        </TableCell>
                                         <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>QTY</TableCell>
                                         <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Unit</TableCell>
                                         <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Rate</TableCell>
@@ -285,14 +280,15 @@ export default function InvoiceContent({ ref, formData }) {
                                                 <TableCell></TableCell>
                                                 <TableCell></TableCell>
                                                 <TableCell></TableCell>
-                                                <TableCell></TableCell>
                                             </TableRow>
                                         ) : (
                                             (formData?.itemsList || []).map((item, index) => {
                                                 return (
                                                     <TableRow key={index}>
-                                                        <TableCell>{index + 1}</TableCell>
-                                                        <TableCell>{item?.item_name || ""}</TableCell>
+                                                        <TableCell>
+                                                            <div className="text-left">
+                                                                <span className="font-semibold">{index + 1}.</span> {item?.item_name || ""}</div>
+                                                        </TableCell>
                                                         <TableCell>{item?.quantity || 0}</TableCell>
                                                         <TableCell>{item?.units || ""}</TableCell>
                                                         <TableCell>{item?.price || 0}</TableCell>
@@ -308,7 +304,9 @@ export default function InvoiceContent({ ref, formData }) {
                                         )
                                     }
                                     <TableRow sx={highlightedRows}>
-                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={3}>Total Quantity</TableCell>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={2}>
+                                            <div className="text-center">Total Quantity</div>
+                                        </TableCell>
                                         <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={2}>
                                             <div className="text-center">
                                                 {getTotalQuantity()}
@@ -328,7 +326,7 @@ export default function InvoiceContent({ ref, formData }) {
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell colSpan={11}>
+                                        <TableCell colSpan={10}>
                                             <div className="text-left text-[14px] text-pretty">
                                                 Total amount (in words):
                                                 <span className="font-semibold text-[16px] pl-2">
