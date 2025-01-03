@@ -19,7 +19,7 @@ export default function InvoiceContent({ ref, formData }) {
     const highlightedRows = {
         backgroundColor: '#BFDBFE',
         textAlign: 'center',
-        fontWeight: 500
+        fontWeight: 600
     }
 
     function toNumber(value) {
@@ -178,33 +178,31 @@ export default function InvoiceContent({ ref, formData }) {
                             <Table>
                                 <TableBody>
                                     <TableRow>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
-                                            <div className="flex">
-                                                <div className="font-medium text-[16px]">
-                                                    Invoice Date :
+                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={11}>
+                                            <div className="flex justify-left">
+                                                <div className="border-r border-black pr-6">
+                                                    <span className="font-medium text-[14px]">
+                                                        Invoice Date :
+                                                    </span>
+                                                    <span className="font-semibold text-[16px] pl-2">
+                                                        {getFormattedDate(formData?.invoice_date)}
+                                                    </span>
                                                 </div>
-                                                <div className="font-semibold text-[18px]">
-                                                    {getFormattedDate(formData?.invoice_date)}
+                                                <div className="border-r border-black px-6">
+                                                    <span className="font-medium text-[14px]">
+                                                        Date of Supply :
+                                                    </span>
+                                                    <span className="font-semibold text-[16px] pl-2">
+                                                        {getFormattedDate(formData?.data_of_supply)}
+                                                    </span>
                                                 </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
-                                            <div className="flex">
-                                                <div className="font-medium text-[16px]">
-                                                    Date of Supply :
-                                                </div>
-                                                <div className="font-semibold text-[18px]">
-                                                    {getFormattedDate(formData?.data_of_supply)}
-                                                </div>
-                                            </div>
-                                        </TableCell>
-                                        <TableCell sx={{ verticalAlign: 'top' }} colSpan={5}>
-                                            <div className="flex">
-                                                <div className="font-medium text-[16px]">
-                                                    Place of Supply :
-                                                </div>
-                                                <div className="font-semibold text-[18px]">
-                                                    {formData?.place_of_supply}
+                                                <div className="pl-6">
+                                                    <span className="font-medium text-[14px]">
+                                                        Place of Supply :
+                                                    </span>
+                                                    <span className="font-semibold text-[16px] pl-2">
+                                                        {formData?.place_of_supply}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </TableCell>
@@ -234,51 +232,45 @@ export default function InvoiceContent({ ref, formData }) {
                                     </TableRow>
                                     <TableRow>
                                         <TableCell sx={{ verticalAlign: 'top' }} colSpan={4}>
-                                            <div className="text-left">
-                                                <div className="font-medium mb-1 text-[18px]">
-                                                    Source of supply:
-                                                </div>
-                                                <span className="text-xl font-semibold">
-                                                    {formData?.company_name || ""}
-                                                </span>
-                                                <AddressComponent address_type="company" />
+                                            <div className="text-left font-medium mb-1 text-[18px]">
+                                                Source of supply:
                                             </div>
+                                            <div className="text-left text-xl font-semibold">
+                                                {formData?.company_name || ""}
+                                            </div>
+                                            <AddressComponent address_type="company" formData={formData} />
                                         </TableCell>
                                         <TableCell sx={{ verticalAlign: 'top' }} colSpan={4}>
-                                            <div className="text-left">
-                                                <div className="font-medium mb-1 text-[18px]">
-                                                    Customer Details:
-                                                </div>
-                                                <div>{formData?.customer_name || ""}</div>
-                                                <div className="font-medium mb-1 text-[18px]">Billing Address:</div>
-                                                <AddressComponent address_type="customer" />
+                                            <div className="text-left font-medium mb-1 text-[18px]">
+                                                Customer Details:
                                             </div>
+                                            <div className="text-left text-[18px] mb-1">{formData?.customer_name || ""}</div>
+                                            <div className="text-left font-medium mb-1 text-[18px]">Billing Address:</div>
+                                            <AddressComponent address_type="customer" formData={formData} />
                                         </TableCell>
                                         <TableCell sx={{ verticalAlign: 'top' }} colSpan={3}>
-                                            <div className="text-left">
-                                                <div className="font-medium mb-1 text-[18px]">
-                                                    Shipping Address:
-                                                </div>
-                                                <AddressComponent address_type="shipping" />
+                                            <div className="text-left font-medium mb-1 text-[18px]">
+                                                Shipping Address:
                                             </div>
+                                            <AddressComponent address_type="shipping" formData={formData} />
                                         </TableCell>
                                     </TableRow>
                                     <TableRow sx={highlightedRows}>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>#</TableCell>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>Name of Product</TableCell>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>QTY</TableCell>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>Unit</TableCell>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>Rate</TableCell>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>Taxable Value</TableCell>
-                                        <TableCell sx={highlightedRows} colSpan={2}>CGST</TableCell>
-                                        <TableCell sx={highlightedRows} colSpan={2}>SGST</TableCell>
-                                        <TableCell sx={highlightedRows} rowSpan={2}>Total</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>#</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Name of Product</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>QTY</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Unit</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Rate</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Taxable Value</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} colSpan={2}>CGST</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} colSpan={2}>SGST</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }} rowSpan={2}>Total</TableCell>
                                     </TableRow>
                                     <TableRow>
-                                        <TableCell sx={highlightedRows}>Rate</TableCell>
-                                        <TableCell sx={highlightedRows}>Amount</TableCell>
-                                        <TableCell sx={highlightedRows}>Rate</TableCell>
-                                        <TableCell sx={highlightedRows}>Amount</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }}>Rate</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }}>Amount</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }}>Rate</TableCell>
+                                        <TableCell sx={{ ...highlightedRows, fontSize: '16px' }}>Amount</TableCell>
                                     </TableRow>
                                     {
                                         formData?.itemsList && formData?.itemsList?.length === 0 ? (
@@ -316,30 +308,30 @@ export default function InvoiceContent({ ref, formData }) {
                                         )
                                     }
                                     <TableRow sx={highlightedRows}>
-                                        <TableCell sx={{ fontSize: '16px' }} colSpan={3}>Total Quantity</TableCell>
-                                        <TableCell sx={{ fontSize: '16px' }} colSpan={2}>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={3}>Total Quantity</TableCell>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={2}>
                                             <div className="text-center">
                                                 {getTotalQuantity()}
                                             </div>
                                         </TableCell>
-                                        <TableCell sx={{ fontSize: '16px' }}>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }}>
                                             ₹ {get_Total_taxable_value()}
                                         </TableCell>
-                                        <TableCell sx={{ fontSize: '16px' }} colSpan={2}>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={2}>
                                             ₹ {get_all_items_gst("cgst")}
                                         </TableCell>
-                                        <TableCell sx={{ fontSize: '16px' }} colSpan={2}>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }} colSpan={2}>
                                             ₹ {get_all_items_gst("sgst")}
                                         </TableCell>
-                                        <TableCell sx={{ fontSize: '16px' }}>
+                                        <TableCell sx={{ fontSize: '16px', fontWeight: 600 }}>
                                             ₹ {get_all_items_total_after_taxes()}
                                         </TableCell>
                                     </TableRow>
                                     <TableRow>
                                         <TableCell colSpan={11}>
-                                            <div className="text-left text-[16px] font-medium">
+                                            <div className="text-left text-[14px] text-pretty">
                                                 Total amount (in words):
-                                                <span className="font-semibold text-[18px] pl-1">
+                                                <span className="font-semibold text-[16px] pl-2">
                                                     {convertRupeesPaise(get_all_items_total_after_taxes())}
                                                 </span>
                                             </div>
@@ -350,12 +342,12 @@ export default function InvoiceContent({ ref, formData }) {
                                             <BankComponent formData={formData} />
                                         </TableCell>
                                         <TableCell sx={highlightedRows} colSpan={3}>
-                                            <div className="text-left">
+                                            <div className="text-left font-medium text-[16px]">
                                                 Total Amount Before Tax
                                             </div>
                                         </TableCell>
                                         <TableCell sx={highlightedRows} colSpan={3}>
-                                            <div className="text-left">
+                                            <div className="text-left font-medium text-[16px]">
                                                 ₹ {get_all_items_total_after_taxes()}
                                             </div>
                                         </TableCell>
@@ -386,10 +378,14 @@ export default function InvoiceContent({ ref, formData }) {
                                     </TableRow>
                                     <TableRow>
                                         <TableCell sx={highlightedRows} colSpan={3}>
-                                            Total Amount
+                                            <div className="text-left font-medium text-[16px]">
+                                                Total Amount
+                                            </div>
                                         </TableCell>
                                         <TableCell sx={highlightedRows} colSpan={3}>
-                                            ₹ {get_all_items_total_after_taxes()}
+                                            <div className="text-left font-medium text-[16px]">
+                                                ₹ {get_all_items_total_after_taxes()}
+                                            </div>
                                         </TableCell>
                                     </TableRow>
                                 </TableBody>

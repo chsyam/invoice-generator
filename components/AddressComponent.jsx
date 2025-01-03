@@ -3,15 +3,15 @@ export default function AddressComponent({ address_type, formData }) {
         <div>
             {
                 address_type === "company" && (
-                    <address className="mb-3">
+                    <address className="mb-1 text-left">
                         <div className="my-2">
-                            {formData?.company_plot_number && `${formData?.company_plot_number},`}
-                            {formData?.company_street && `${formData?.company_street},`}
-                            {formData?.company_landmark && `${formData?.company_landmark},`}
-                            {formData?.company_area && `${formData?.company_area},`}
-                            {formData?.company_city && `${formData?.company_city},`}
-                            {formData?.company_state && `${formData?.company_state},`}
-                            {formData?.company_pincode && `${formData?.company_pincode}.`}
+                            {formData?.company_plot_number && `${formData?.company_plot_number}, `}
+                            {formData?.company_street && `${formData?.company_street}, `}
+                            {formData?.company_landmark && `${formData?.company_landmark}, `}
+                            {formData?.company_area && `${formData?.company_area}, `}
+                            {formData?.company_city && `${formData?.company_city}, `}
+                            {formData?.company_state && `${formData?.company_state}, `}
+                            {formData?.company_pincode && `${formData?.company_pincode}. `}
                         </div>
                         {
                             <div>
@@ -54,15 +54,15 @@ export default function AddressComponent({ address_type, formData }) {
             }
             {
                 address_type === "customer" && (
-                    <address className="mb-3">
+                    <address className="mb-1 text-left">
                         <div className="my-2">
-                            {formData?.customer_plot_number && `${formData?.customer_plot_number},`}
-                            {formData?.customer_street && `${formData?.customer_street},`}
-                            {formData?.customer_landmark && `${formData?.customer_landmark},`}
-                            {formData?.customer_area && `${formData?.customer_area},`}
-                            {formData?.customer_city && `${formData?.customer_city},`}
-                            {formData?.customer_state && `${formData?.customer_state},`}
-                            {formData?.customer_pincode && `${formData?.customer_pincode}.`}
+                            {formData?.customer_plot_number && `${formData?.customer_plot_number}, `}
+                            {formData?.customer_street && `${formData?.customer_street}, `}
+                            {formData?.customer_landmark && `${formData?.customer_landmark}, `}
+                            {formData?.customer_area && `${formData?.customer_area}, `}
+                            {formData?.customer_city && `${formData?.customer_city}, `}
+                            {formData?.customer_state && `${formData?.customer_state}, `}
+                            {formData?.customer_pincode && `${formData?.customer_pincode}. `}
                         </div>
                         {
                             <div>
@@ -105,13 +105,13 @@ export default function AddressComponent({ address_type, formData }) {
             }
             {
                 address_type === "shipping" && (
-                    <address className="mb-3">
-                        {formData?.shipping_plot_number && `${formData?.shipping_plot_number},`}
-                        {formData?.shipping_landmark && `${formData?.shipping_landmark},`}
-                        {formData?.shipping_street && `${formData?.shipping_street},`}
-                        {formData?.shipping_state && `${formData?.shipping_area},`}
-                        {formData?.shipping_pincode && `${formData?.shipping_pincode},`}
-                        {formData?.shipping_city && `${formData?.shipping_city}`}
+                    <address className="mb-1 text-left">
+                        {formData?.shipping_plot_number && `${formData?.shipping_plot_number}, `}
+                        {formData?.shipping_landmark && `${formData?.shipping_landmark}, `}
+                        {formData?.shipping_street && `${formData?.shipping_street}, `}
+                        {formData?.shipping_state && `${formData?.shipping_area}, `}
+                        {formData?.shipping_pincode && `${formData?.shipping_pincode}, `}
+                        {formData?.shipping_city && `${formData?.shipping_city} `}
                     </address>
                 )
             }

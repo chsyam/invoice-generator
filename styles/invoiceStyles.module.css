@@ -36,6 +36,7 @@
 .itemsList table tbody tr td {
     border: 1px solid black;
     text-align: center;
+    font-family: "Montserrat", serif;
 }
 
 .itemsList table tbody tr:nth-child(1) td {
